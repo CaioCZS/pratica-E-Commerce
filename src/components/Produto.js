@@ -26,7 +26,7 @@ export default function Produto({
         <p>{nome}</p>
         <p>R${preco},00</p>
       </div>
-      <button onClick={() => comprarItem({id})}>Comprar</button>
+      <button onClick={() => comprarItem(id)}>Comprar</button>
     </ItemProduto>
   );
 }

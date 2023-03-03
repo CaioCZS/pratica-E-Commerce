@@ -16,6 +16,7 @@ export default function Lista({
           setItensCarrinho={setItensCarrinho}
           nome={p.nome}
           imagem={p.imagem}
+          id={p.id}
           key={p.id}
           preco={p.preco}
           produto={p}

@@ -9,9 +9,11 @@ export default function Produto({
   itensCarrinho,
   precoFinal,
   setPrecoFinal,
+  id
 }) {
-  function comprarItem() {
-    if (!itensCarrinho.includes(produto)) {
+  function comprarItem(id) {
+    const estaNoCarrinho = itensCarrinho.some(p => p.id === id)
+    if (!estaNoCarrinho) {
       setItensCarrinho([...itensCarrinho, produto]);
       setPrecoFinal(precoFinal + preco);
     }
@@ -24,7 +26,7 @@ export default function Produto({
         <p>{nome}</p>
         <p>R${preco},00</p>
       </div>
-      <button onClick={comprarItem}>Comprar</button>
+      <button onClick={() => comprarItem({id})}>Comprar</button>
     </ItemProduto>
   );
 }

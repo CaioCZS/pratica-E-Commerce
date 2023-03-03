@@ -7,7 +7,7 @@ export default function Carrinho({
   setItensCarrinho,
 }) {
   function excluirItem(p) {
-    const nvLista = itensCarrinho.filter((item) => item !== p);
+    const nvLista = itensCarrinho.filter((item) => item.id !== p.id);
     setItensCarrinho(nvLista);
     setPrecoFinal(precoFinal - p.preco);
   }
